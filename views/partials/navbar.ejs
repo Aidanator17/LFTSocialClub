@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 20px;">
+  <div class="collapse navbar-collapse navgrid" id="navbarNavAltMarkup">
+    <img class="navbar-brand" src="/images/book_logo.png" style="margin-right: 1%;" width="4%">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/">Home</a>
+      <a class="nav-item nav-link" href="/recipe/all">Recipes</a>
+    </div>
+  </div>
+  <div class="navbar-text navbar-right d-inline">
+    <% if (typeof(currentUser)!=="undefined" ){ %>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <%= currentUser.firstName+" "+currentUser.lastName %>
+      </a>
+      <div class=" dropdown-menu navbar-dark bg-dark" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item dropdown-itemA" href="/profile">Profile</a>
+        <a class="dropdown-item dropdown-itemA" href="/pantry/view">My Pantry</a>
+        <a class="dropdown-item dropdown-itemA" href="/recipe/personal">My Recipes</a>
+        <% if (currentUser.role=="admin" ){ %>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/db/display">The Vault</a>
+          <a class="dropdown-item" href="/sessions">Sessions</a>
+          <a class="dropdown-item" href="/addItem">Add Item</a>
+          <a class="dropdown-item" href="/addRecipe">Add Recipe</a>
+          <% } %>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/auth/logout">Logout</a>
+        </div>
+      </div>
+      <% } else { %>
+        <a href="/auth/login" class="nav-link form-inline">Sign in / Sign up</a>
+        <% } %>
+      </div>
+      <% if (typeof(currentUser)!=="undefined" ){ %>
+      <img class="nav-item" src="<%= currentUser.imageURL %>" width="64px"><% } %> 
+    </nav>

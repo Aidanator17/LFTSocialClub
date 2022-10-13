@@ -1,0 +1,35 @@
+{
+  "name": "lftsocialclub",
+  "version": "1.0.0",
+  "description": "a place where people can submit thier applications, and show off just a lil bit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aidanator17/LFTSocialClub.git"
+  },
+  "keywords": [
+    "lft"
+  ],
+  "author": "Aidan C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aidanator17/LFTSocialClub/issues"
+  },
+  "homepage": "https://github.com/Aidanator17/LFTSocialClub#readme",
+  "dependencies": {
+    "@prisma/client": "^4.4.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "node-fetch": "^2.6.6",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
