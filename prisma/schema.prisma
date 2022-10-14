@@ -20,7 +20,7 @@ model User {
   password    String @unique
   method      String
   role        String @default("user")
-  imageURL    String @default("")
+  imageID     String @default("")
 
   @@map(name: "users")
 }
